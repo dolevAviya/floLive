@@ -1,0 +1,41 @@
+<h1 class="page-title">Users</h1>
+<div class="page-content" *ngIf="users | async as usersData; else loading">
+  <div class="table-container">
+
+    <div>
+      <mat-form-field class="example-form-field">
+        <mat-label>First/Last Name filter</mat-label>
+        <input matInput type="text" [(ngModel)]="searchVal" />
+      </mat-form-field>
+      <button mat-button [disabled]="!searchVal" (click)="search()">search</button>
+      <button mat-button [disabled]="!searchVal" (click)="searchVal = ''; getUsers()">clear</button>
+    </div>
+
+    <app-users-table
+      class="table"
+      [users]="usersData.users || []"
+    ></app-users-table>
+
+    <mat-paginator
+      *ngIf="usersData.total"
+      (page)="handlePageEvent($event)"
+      [length]="usersData.total"
+      [pageSize]="limit"
+      [pageSizeOptions]="[3, 5, 10, usersData.total]"
+      [pageIndex]="pageIndex"
+    >
+    </mat-paginator>
+    <small class="total-pages">total pages: {{usersData.total/limit | ceilNumber}}</small>
+  </div>
+  <div class="pie-chart" *ngIf="usersData.users?.length as usersLen">
+    <app-pie-chart
+      *ngIf="malesAmount$ | async as males"
+      [pieChartData]="{
+        values: [males, usersLen - males],
+        labels: ['males', 'females']
+      }"
+    ></app-pie-chart>
+  </div>
+</div>
+
+<ng-template #loading><mat-spinner class="loading"></mat-spinner> </ng-template>

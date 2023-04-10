@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid gainsboro;
+  align-items: center;
+
+  .start {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  p {
+
+    margin: 0;
+  }
+}
+
+.navy-rectangle {
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 2rem solid navy;
+}
+
+.orange-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: orange;
+}

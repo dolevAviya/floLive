@@ -1,0 +1,23 @@
+<div *ngIf="users.length; else noData">
+  <div class="row headers">
+    <p class="col" *ngFor="let header of headers">{{ header }}</p>
+  </div>
+  <div class="content">
+    <div class="row" *ngFor="let user of users" (dblclick)="navigateToUserDetails(user.id)">
+      <p class="col">{{ user.firstName }}</p>
+      <p class="col">{{ user.lastName }}</p>
+      <p class="col">{{ user.age }}</p>
+      <p class="col">{{ user.gender }}</p>
+      <p
+        class="col"
+        matTooltip="{{ user.address.address }}, {{ user.address.city }}"
+      >
+        {{ user.address.city }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noData>
+  <h1 class="no-data">There is no data to show</h1>
+</ng-template>

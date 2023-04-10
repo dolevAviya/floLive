@@ -1,0 +1,22 @@
+.page-title {
+  margin: 0.2rem 3rem 0;
+}
+
+.page-content {
+  padding: 0 1rem;
+  display: flex;
+
+  .user-data {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    height: fit-content;
+    background: aliceblue;
+    box-shadow: 0 0 2px 0 #57748d;
+    border-radius: 3px;
+  }
+
+  app-bar-chart {
+    flex-grow: 1;
+  }
+}
+

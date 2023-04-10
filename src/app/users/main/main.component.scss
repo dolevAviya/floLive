@@ -1,0 +1,36 @@
+.page-title {
+  margin: 0.2rem 3rem 0;
+}
+
+.page-content {
+  display: flex;
+  overflow: hidden;
+  padding: 0 2rem;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .table-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .table {
+      overflow: auto;
+      display: block;
+      max-height: 60vh;
+    }
+
+    .total-pages {
+      color: gray;
+    }
+  }
+
+  .pie-chart {
+    margin-top: 3rem;
+  }
+}
+
+.loading {
+  margin: 5rem auto;
+}

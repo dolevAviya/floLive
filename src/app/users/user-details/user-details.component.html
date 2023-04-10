@@ -1,0 +1,11 @@
+<h1 class="page-title">User Details</h1>
+<div class="page-content">
+<ul *ngIf="selectedUser" class="user-data">
+    <li>Name: {{selectedUser.firstName}} {{selectedUser.lastName}}</li>
+    <li>Address: {{selectedUser.address.address}}, {{selectedUser.address.city}}</li>
+    <li>Age: {{selectedUser.age}}</li>
+    <li>Gender: {{selectedUser.gender}}</li>
+    </ul>
+<app-bar-chart [barChartData]="chartData"></app-bar-chart>
+</div>
+<button mat-button (click)="navigateToUsers()" class="back">Back to USERS</button>

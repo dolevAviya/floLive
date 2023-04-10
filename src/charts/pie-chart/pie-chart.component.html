@@ -1,0 +1,9 @@
+<div id="chart">
+  <apx-chart
+    *ngIf="chartOptions.chart"
+    [series]="chartOptions.series || []"
+    [labels]="chartOptions.labels"
+    [chart]="chartOptions.chart"
+  >
+  </apx-chart>
+</div>
